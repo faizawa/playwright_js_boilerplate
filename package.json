@@ -1,0 +1,22 @@
+{
+  "name": "playwright-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test tests",
+    "test:login": "playwright test tests/login.spec.js",
+    "test:dev": "cross-env NODE_ENV=dev playwright test tests",
+    "test:staging": "cross-env NODE_ENV=stag playwright test tests",
+    "test:production": "cross-env NODE_ENV=prod playwright test tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
+}
