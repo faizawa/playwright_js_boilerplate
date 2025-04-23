@@ -4,7 +4,7 @@ import {
   passwordField,
   loginButton,
 } from "../page-objects/login"
-import { BASE_URL, STANDARD_USER, STANDARD_PASSWORD } from "../config"
+import { BASE_URL, STANDARD_USERNAME, STANDARD_PASSWORD } from "../config"
 
 class loginPage extends basePage {
   constructor(page) {
