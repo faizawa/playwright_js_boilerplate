@@ -5,7 +5,7 @@ dotenv.config()
 //export env variables
 
 //credentials
-export const STANDARD_USER = process.env.STANDARD_USERNAME
+export const STANDARD_USERNAME = process.env.STANDARD_USERNAME
 export const STANDARD_PASSWORD = process.env.STANDARD_PASSWORD
 export const LOCKED_USER = process.env.LOCKED_USER
 export const LOCKED_PASSWORD = process.env.LOCKED_PASSWORD

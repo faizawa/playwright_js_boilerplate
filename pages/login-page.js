@@ -29,7 +29,7 @@ class loginPage extends basePage {
   }
 
   async loginStandardUser() {
-    await this.waitAndFill(usernameField, STANDARD_USER)
+    await this.waitAndFill(usernameField, STANDARD_USERNAME)
     await this.waitAndFill(passwordField, STANDARD_PASSWORD)
     await this.waitAndClick(loginButton)
   }
