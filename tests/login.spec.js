@@ -1,7 +1,8 @@
 import { expect } from "@playwright/test"
+import basePage from "../pages/base-page"
 import test from "../test-fixture/fixture"
 
-import { BASE_URL } from "../config"
+import { BASE_URL, INVENTORY_URL } from "../config"
 
 test.describe.serial("Testing login process", () => {
   test("Login as a STANDARD USER", async ({ loginPage }) => {
@@ -12,6 +13,7 @@ test.describe.serial("Testing login process", () => {
       await loginPage.passwordFieldVisible()
       await loginPage.loginButtonVisible()
       await loginPage.loginStandardUser()
+      expect(await loginPage.getUrl()).toBe(INVENTORY_URL)
     })
   })
 })

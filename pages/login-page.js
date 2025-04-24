@@ -5,6 +5,7 @@ import {
   loginButton,
 } from "../page-objects/login"
 import { BASE_URL, STANDARD_USERNAME, STANDARD_PASSWORD } from "../config"
+import { expect } from "@playwright/test"
 
 class loginPage extends basePage {
   constructor(page) {
@@ -32,6 +33,7 @@ class loginPage extends basePage {
     await this.waitAndFill(usernameField, STANDARD_USERNAME)
     await this.waitAndFill(passwordField, STANDARD_PASSWORD)
     await this.waitAndClick(loginButton)
+    expect(await this.isElementVisible("//div[@class='product_label']"))
   }
 }
 
