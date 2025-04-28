@@ -1,9 +1,14 @@
 import { test as fixture } from "@playwright/test"
-import loginPage from "../pages/login-page"
+import pages from "../pages/pages"
+// import loginPage from "../pages/login-page"
+// import feedbackFormPage from "../pages/feedback-form-page"
 
 const test = fixture.extend({
   loginPage: async ({ page }, use) => {
-    await use(new loginPage(page))
+    await use(pages.loginPage(page))
+  },
+  feedbackFormPage: async ({ page }, use) => {
+    await use(pages.feedbackFormPage(page))
   },
 })
 

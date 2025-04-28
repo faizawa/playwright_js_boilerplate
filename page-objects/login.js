@@ -1,3 +1,7 @@
-export const usernameField = "//input[@id='user-name']"
-export const passwordField = "//input[@id='password']"
-export const loginButton = "//input[@id='login-button']"
+const loginLocators = {
+  usernameField: "//input[@id='user-name']",
+  passwordField: "//input[@id='password']",
+  loginButton: "//input[@id='login-button']",
+}
+
+export default loginLocators
