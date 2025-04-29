@@ -1,20 +1,24 @@
 {
   "name": "playwright-boilerplate",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "playwright test tests",
-    "test:login": "playwright test tests/login.spec.js",
-    "test:dev": "cross-env NODE_ENV=dev playwright test tests",
-    "test:staging": "cross-env NODE_ENV=stag playwright test tests",
-    "test:production": "cross-env NODE_ENV=prod playwright test tests"
+    "test:file": "cross-env TEST_ENV",
+    "runTest": "node run-test.js",
+    "regression": "cross-env TEST_ENV=dev npx playwright test tests",
+    "test:dev": "cross-env TEST_ENV=dev playwright test tests",
+    "test:staging": "cross-env TEST_ENV=staging playwright test tests",
+    "test:production": "cross-env TEST_ENV=production playwright test tests"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mohammad Faizal Awalludin",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.52.0"
+    "@playwright/test": "^1.52.0",
+    "cross-env": "^7.0.3"
   },
   "dependencies": {
     "@axe-core/playwright": "^4.10.1",

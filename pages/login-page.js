@@ -1,6 +1,7 @@
 import basePage from "./base-page"
 import loginLocators from "../page-objects/login"
-import { BASE_URL, STANDARD_USERNAME, STANDARD_PASSWORD } from "../config"
+import { urls, credentials } from "../config"
+// import { BASE_URL, STANDARD_USERNAME, STANDARD_PASSWORD } from "../config"
 import { expect } from "@playwright/test"
 
 class loginPage extends basePage {
@@ -9,7 +10,8 @@ class loginPage extends basePage {
   }
 
   async navigateToLoginPage() {
-    await this.open(BASE_URL)
+    console.log("🚀 Navigating to: ", urls.base)
+    await this.open(urls.base)
     return await this.waitForPageLoad()
   }
 
@@ -30,8 +32,8 @@ class loginPage extends basePage {
 
   async loginStandardUser() {
     const { usernameField, passwordField, loginButton } = loginLocators
-    await this.waitAndFill(usernameField, STANDARD_USERNAME)
-    await this.waitAndFill(passwordField, STANDARD_PASSWORD)
+    await this.waitAndFill(usernameField, credentials.username)
+    await this.waitAndFill(passwordField, credentials.password)
     await this.waitAndClick(loginButton)
     expect(await this.isElementVisible("//div[@class='product_label']"))
   }

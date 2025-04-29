@@ -7,9 +7,6 @@ const test = fixture.extend({
   loginPage: async ({ page }, use) => {
     await use(pages.loginPage(page))
   },
-  feedbackFormPage: async ({ page }, use) => {
-    await use(pages.feedbackFormPage(page))
-  },
 })
 
 export default test
