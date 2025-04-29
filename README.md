@@ -67,8 +67,6 @@ You'll need to create a .env file in the root of the project to store your crede
 Example of what your .env file might look like:
 
 ```bash
-Copy
-Edit
 BASE_URL=https://yourwebsite.com
 USERNAME=your_username
 PASSWORD=your_password
