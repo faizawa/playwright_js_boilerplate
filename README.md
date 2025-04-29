@@ -60,6 +60,24 @@ Here's an overview:
   .gitignore        # Git ignore file
 ```
 
+## 📦 Environment Variables
+This project uses dotenv to handle environment variables.
+You'll need to create a .env file in the root of the project to store your credentials, URLs, secrets, and other sensitive data.
+
+Example of what your .env file might look like:
+
+```bash
+Copy
+Edit
+BASE_URL=https://yourwebsite.com
+USERNAME=your_username
+PASSWORD=your_password
+```
+Important:
+Make sure you never commit your .env file to GitHub — it's your secret stash! (Add .env to your .gitignore if it's not already there.) 🕵️‍♂️
+
+
+
 ## Key Directories
 - /pages: Your page objects live here. Define all the actions and magic of your app’s pages.
 
