@@ -1,6 +1,7 @@
 # ⚡ Automated Testing Boilerplate ⚡
 
 A super sleek and modular boilerplate for automated testing using Playwright. Ready to rock your testing game and level up your dev workflow! 🤘
+This boilerplate will be updated gradually, stay tuned...
 
 ## Installation
 
@@ -14,7 +15,7 @@ node -v
 
 If you don't have it... no worries, download it from [here](https://nodejs.org/)
 
-## Step to Install
+## Steps to Install
 
 1. Clone the repo:
 
@@ -25,7 +26,7 @@ git clone https://github.com/faizawa/playwright_js_boilerplate.git
 2. Install dependencies:
 
 ```bash
-npm Install
+npm install
 ```
 
 3. Optional: Install the Playwright browsers:
@@ -42,12 +43,23 @@ Run your tests:
 npm run test
 ```
 
-This will run all the test files inside the /tests directory.
+This runs all the test files inside the /tests directory.
 
-Want to run specific tests? Just add the commands inside package.json file on the scripts section, example:
+Want to run specific test file? Use this command:
 
 ```bash
-"test:login": "playwright test tests/login.spec.js",
+npm run runTest
+```
+
+And you can choose the environment, and type the test file with the tests/ path. It will look like this:
+
+```bash
+🌱 Select the environment:
+❯ dev
+  staging
+  production
+
+🧪 Enter the test file path (e.g., tests/login.spec.js): tests/login.spec.js
 ```
 
 ## 🔧 Folder Structure
@@ -79,9 +91,14 @@ You'll need to create a .env file in the root of the project to store your crede
 Example of what your .env file might look like:
 
 ```bash
-BASE_URL=https://yourwebsite.com
-USERNAME=your_username
-PASSWORD=your_password
+
+TEST_ENV=dev # This can be changed to dev, staging, or production
+
+# DEV environment variables
+DEV_BASE_URL=https://www.saucedemo.com/
+DEV_INVENTORY_URL=https://www.saucedemo.com/inventory.html
+DEV_STANDARD_USERNAME=standard_user
+DEV_STANDARD_PASSWORD=secret_sauce
 ```
 
 Important:
@@ -126,7 +143,20 @@ const cartLocators = {
 export default cartLocators
 ```
 
-3. Register It in fixture.js
+3. Register page files to the pages.js file
+   Update pages.js to include your new page so you can use it in fixture.js :
+
+```js
+import loginPage from "./login-page"
+
+const pages = {
+  loginPage: (page) => new loginPage(page), // You can add new page below
+}
+
+export default pages
+```
+
+4. Register It in fixture.js
    Update fixture.js to include your new page so you can access it in your tests:
 
 ```js
@@ -146,7 +176,7 @@ const test = fixture.extend({
 export default test
 ```
 
-4. Use It in Your Tests
+5. Use It in Your Test Files
    Now in your test file, you can use it like this:
 
 ```js

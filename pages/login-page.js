@@ -1,7 +1,6 @@
 import basePage from "./base-page"
 import loginLocators from "../page-objects/login"
 import { urls, credentials } from "../config"
-// import { BASE_URL, STANDARD_USERNAME, STANDARD_PASSWORD } from "../config"
 import { expect } from "@playwright/test"
 
 class loginPage extends basePage {
