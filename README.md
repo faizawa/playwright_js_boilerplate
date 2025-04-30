@@ -7,7 +7,7 @@ This boilerplate will be updated gradually, stay tuned...
 
 ### Prerequisites
 
-You need to have Node.js installed, like the true dev hero you are. To check, run:
+You need to have Node.js installed. To check, run:
 
 ```bash
 node -v
